@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNSEPTZEROTROIS — Portfolio | Shallum Arel MEDJIGBODO</title>
+  <meta name="description"
+    content="Portfolio de MEDJIGBODO Shallum Arel — Développeur Web & Mobile, UI Designer, Entrepreneur Tech. Découvrez mes projets, compétences et réalisations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-outline" id="cursorOutline"></div>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-shapes">
+        <div class="preloader-shape shape-sphere"></div>
+        <div class="preloader-shape shape-cube"></div>
+        <div class="preloader-shape shape-torus"></div>
+      </div>
+      <div class="preloader-text">
+        <span class="preloader-name">UNSEPTZEROTROIS</span>
+        <div class="preloader-bar">
+          <div class="preloader-bar-fill" id="preloaderBar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo">UNSEPTZEROTROIS</a>
+    <div class="nav-links">
+      <a href="#about" class="nav-link" data-text="À PROPOS">À PROPOS</a>
+      <a href="#projects" class="nav-link" data-text="PROJETS">PROJETS</a>
+      <a href="#skills" class="nav-link" data-text="COMPÉTENCES">COMPÉTENCES</a>
+      <a href="#contact" class="nav-link" data-text="CONTACT">CONTACT</a>
+    </div>
+    <div class="nav-menu-btn" id="navMenuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about" class="mobile-nav-link">À PROPOS</a>
+    <a href="#projects" class="mobile-nav-link">PROJETS</a>
+    <a href="#skills" class="mobile-nav-link">COMPÉTENCES</a>
+    <a href="#contact" class="mobile-nav-link">CONTACT</a>
+  </div>
+
+  <!-- HERO SECTION -->
+
+  <video autoplay loop muted playsinline id="video-bg">
+    <source src="img/bgvideo.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la lecture de vidéos.
+  </video>
+
+</div>
+
+  <section class="hero" id="hero">
+    <!-- Floating 3D geometric decorations -->
+    <div class="floating-shapes">
+      <div class="geo-shape" data-speed="0.3" style="top: 8%; left: 8%;">
+        <div class="sphere-glass">
+          <div class="sphere-inner"></div>
+        </div>
+      </div>
+      <div class="geo-shape" data-speed="-0.2" style="top: 15%; right: 10%;">
+        <div class="cube-3d">
+          <div class="cube-face front"></div>
+          <div class="cube-face back"></div>
+          <div class="cube-face right"></div>
+          <div class="cube-face left"></div>
+          <div class="cube-face top"></div>
+          <div class="cube-face bottom"></div>
+        </div>
+      </div>
+      <div class="geo-shape" data-speed="0.5" style="bottom: 20%; left: 12%;">
+        <div class="torus-ring"></div>
+      </div>
+      <div class="geo-shape" data-speed="-0.4" style="bottom: 25%; right: 15%;">
+        <div class="diamond"></div>
+      </div>
+      <div class="geo-shape" data-speed="0.2" style="top: 55%; right: 26%;">
+        <div class="cross-shape">
+          <span></span><span></span>
+        </div>
+      </div>
+      <div class="geo-shape" data-speed="-0.3" style="top: 60%; left: 18%;">
+        <div class="glass-pill"></div>
+      </div>
+      <div class="geo-shape dot-cluster" data-speed="0.6">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="geo-shape glow-orb orb-1" data-speed="-0.5"></div>
+      <div class="geo-shape glow-orb orb-2" data-speed="0.4"></div>
+    </div>
+
+    <!-- Particle background -->
+    <canvas class="particles-canvas" id="particlesCanvas"></canvas>
+
+    <!-- Grid background overlay -->
+    <div class="hero-grid-bg"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>Disponible pour freelance</span>
+      </div>
+      <h1 class="hero-name">
+        <span class="hero-line line-1">
+          <span class="reveal-text name-text">SHALLUM</span>
+        </span>
+        <span class="hero-line line-2">
+          <span class="reveal-text name-text">AREL<span class="hero-accent-dot">.</span></span>
+        </span>
+      </h1>
+      <div class="hero-subtitle">
+        <span class="hero-line line-3">
+          <span class="reveal-text">Software Engineer · UI Designer</span>
+        </span>
+        <span class="hero-line line-4">
+          <span class="reveal-text">· Entrepreneur Tech</span>
+        </span>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary magnetic-btn">
+          <span>Voir mes projets</span>
+          <svg class="btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="#contact" class="btn-outline magnetic-btn">
+          <span>Me contacter</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="section-header">
+      <span class="section-label">// À PROPOS</span>
+      <h2 class="section-title-large">
+        <span class="title-line"><span class="reveal-text">CONSTRUIRE DES</span></span>
+        <span class="title-line"><span class="reveal-text">EXPÉRIENCES <br>
+            <em class="italic-accent">DIGITALES</em></span></span>
+      </h2>
+    </div>
+
+    <div class="bento-grid">
+      <div class="bento-card bento-bio card-reveal">
+        <div class="bento-card-glow"></div>
+        <div class="bento-card-inner">
+          <p class="bento-text-large">
+            Je suis <strong>MEDJIGBODO Shallum Arel</strong>, étudiant en Génie Logiciel et passionné par la création de
+            solutions digitales modernes et performantes.
+          </p>
+          <p class="bento-text">
+            Sous le pseudonyme <strong class="accent">UNSEPTZEROTROIS</strong>, je conçois des applications web, mobiles
+            et des interfaces intuitives orientées expérience utilisateur. Mon ambition : devenir développeur freelance
+            et entrepreneur tech.
+          </p>
+        </div>
+      </div>
+
+      <div class="bento-card bento-photo card-reveal">
+        <div class="bento-card-glow"></div>
+        <div class="bento-card-inner">
+          <div class="photo-container">
+            <img src="/assets/images/M.png" alt="Shallum Arel MEDJIGBODO" class="photo-real" />
+            <div class="photo-gradient-overlay"></div>
+            <div class="photo-ring"></div>
+            <div class="photo-ring ring-2"></div>
+          </div>
+
+          <a href="gallery.html" class="gallery-icon-btn" aria-label="Ouvrir la galerie">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="10" r="2"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <div class="gallery-tooltip">
+              <div class="tooltip-layout">
+                <div class="tooltip-header"></div>
+                <div class="tooltip-grid">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+              <span class="tooltip-text">Aller à la galerie</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="bento-card bento-stat-1 card-reveal">
+        <div class="bento-card-glow"></div>
+        <div class="bento-card-inner stat-single">
+          <span class="stat-number-big" data-count="4">0</span>
+          <span class="stat-label-big">Projets<br />réalisés</span>
+        </div>
+      </div>
+
+      <div class="bento-card bento-stat-2 card-reveal">
+        <div class="bento-card-glow"></div>
+        <div class="bento-card-inner stat-single">
+          <span class="stat-number-big" data-count="22">0</span>
+          <span class="stat-label-big">Ans</span>
+        </div>
+      </div>
+
+      <div class="bento-card bento-stat-3 card-reveal">
+        <div class="bento-card-glow"></div>
+        <div class="bento-card-inner stat-single">
+          <span class="stat-number-big" data-count="10">0</span>
+          <span class="stat-label-big">Technologies<br />maîtrisées</span>
+        </div>
+      </div>
+
+      <div class="bento-card bento-info card-reveal">
+        <div class="bento-card-glow"></div>
+        <div class="bento-card-inner">
+          <h3 class="bento-card-title">INFORMATIONS</h3>
+          <div class="info-row">
+            <span class="info-label">Nom</span>
+            <span class="info-value">MEDJIGBODO Shallum Arel</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Pseudo</span>
+            <span class="info-value accent">UNSEPTZEROTROIS</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Statut</span>
+            <span class="info-value">Étudiant Génie Logiciel</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Objectif</span>
+            <span class="info-value">Freelance & Entrepreneur</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="projects" id="projects">
+    <div class="section-header">
+      <span class="section-label">// PROJETS</span>
+      <h2 class="section-title-large">
+        <span class="title-line"><span class="reveal-text">TRAVAUX</span></span>
+        <span class="title-line"><span class="reveal-text"><em class="italic-accent">SÉLECTIONNÉS</em></span></span>
+      </h2>
+    </div>
+
+    <!-- Project 1: PayChat -->
+    <article class="project-block" data-index="01">
+      <div class="project-block-inner">
+        <div class="project-visual">
+          <div class="project-img-main">
+            <img src="https://cdn.dribbble.com/userupload/14330213/file/original-25f98266350471b8c20425728173c3ec.jpg"
+              alt="PayChat App" loading="lazy" />
+            <div class="project-img-overlay"></div>
+          </div>
+          <div class="project-img-float">
+            <img
+              src="https://cdn.dribbble.com/userupload/46698897/file/512f4162e32e81468680d6adf45f302b.png?resize=400x0"
+              alt="PayChat Design" loading="lazy" />
+          </div>
+          <div class="project-number">01</div>
+        </div>
+        <div class="project-details">
+          <span class="project-category">APPLICATION MOBILE</span>
+          <h3 class="project-title">PayChat</h3>
+          <p class="project-description">
+            Application mobile combinant messagerie instantanée et transfert d'argent sécurisé. Interface intuitive pour
+            simplifier les transactions entre particuliers.
+          </p>
+          <div class="project-stack">
+            <span>React Native</span>
+            <span>Expo</span>
+            <span>Supabase</span>
+            <span>JavaScript</span>
+          </div>
+          <a href="#" class="project-cta magnetic-btn">
+            <span>Voir le projet</span>
+            <div class="project-cta-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 2: ANTA -->
+    <article class="project-block" data-index="02">
+      <div class="project-block-inner reverse">
+        <div class="project-visual">
+          <div class="project-img-main">
+            <img src="/assets/ANTA PROJECT/antaprincipale.jpeg" alt="ANTA - Plateforme éducative" loading="lazy"
+              style="object-position: top center;" />
+            <div class="project-img-overlay"></div>
+          </div>
+          <div class="project-img-float">
+            <img src="/assets/ANTA PROJECT/antadashboard1.jpeg" alt="ANTA Dashboard" loading="lazy"
+              style="object-position: top center;" />
+          </div>
+          <div class="project-number">02</div>
+        </div>
+        <div class="project-details">
+          <span class="project-category">SITE WEB ÉDUCATIF</span>
+          <h3 class="project-title">ANTA</h3>
+          <p class="project-description">
+            Plateforme éducative destinée aux enfants de 7 à 15 ans. Initiation à l'informatique, l'entrepreneuriat et
+            le leadership à travers des modules interactifs.
+          </p>
+          <div class="project-stack">
+            <span>HTML / CSS</span>
+            <span>JavaScript</span>
+            <span>Figma</span>
+            <span>UI Design</span>
+          </div>
+          <a href="gallery.html?project=anta" class="project-cta magnetic-btn">
+            <span>Voir le projet</span>
+            <div class="project-cta-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 3: Brochure -->
+    <article class="project-block" data-index="03">
+      <div class="project-block-inner">
+        <div class="project-visual">
+          <div class="project-img-main">
+            <img
+              src="https://s.tmimgcdn.com/scr/800x500/118000/a5-company-modern-brochure-corporate-identity-template_118009-original.jpg"
+              alt="Brochure Fun High Tech" loading="lazy" />
+            <div class="project-img-overlay"></div>
+          </div>
+          <div class="project-img-float">
+            <img
+              src="https://asset.gecdesigns.com/img/flyer-templates/professional-looking-school-promotion-flyer-design-1659087425446-cover.webp"
+              alt="Brochure Design" loading="lazy" />
+          </div>
+          <div class="project-number">03</div>
+        </div>
+        <div class="project-details">
+          <span class="project-category">DESIGN PRINT A5</span>
+          <h3 class="project-title">Brochure FUN HIGH TECH</h3>
+          <p class="project-description">
+            Brochure professionnelle format A5 prête pour impression. Mise en page structurée avec wireframe Figma,
+            hiérarchie visuelle soignée et typographie premium.
+          </p>
+          <div class="project-stack">
+            <span>Figma</span>
+            <span>Layout Design</span>
+            <span>Typography</span>
+            <span>Branding</span>
+          </div>
+          <a href="#" class="project-cta magnetic-btn">
+            <span>Voir le design</span>
+            <div class="project-cta-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 4: IUP MILENA -->
+    <article class="project-block" data-index="04">
+      <div class="project-block-inner reverse">
+        <div class="project-visual">
+          <div class="project-img-main">
+            <img src="/assets/milena-preview.png" alt="IUP MILENA Accueil" loading="lazy"
+              style="object-position: top center;" />
+            <div class="project-img-overlay"></div>
+          </div>
+          <div class="project-img-float">
+            <img src="/assets/milena-preview.png" alt="IUP MILENA Detail" loading="lazy"
+              style="object-position: center;" />
+          </div>
+          <div class="project-number">04</div>
+        </div>
+        <div class="project-details">
+          <span class="project-category">SITE WEB INSTITUTIONNEL</span>
+          <h3 class="project-title">IUP MILENA</h3>
+          <p class="project-description">
+            Site web institutionnel présentant les filières d'excellence, les modalités d'admission et la vie étudiante
+            de l'IUP MILENA.
+          </p>
+          <div class="project-stack">
+            <span>HTML / CSS</span>
+            <span>JavaScript</span>
+            <span>Responsive Design</span>
+          </div>
+          <a href="https://linergroup.tech/milena/linergroup.tech/milena/index.html" target="_blank"
+            class="project-cta magnetic-btn">
+            <span>Voir le site web</span>
+            <div class="project-cta-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 5: Promoteur -->
+    <article class="project-block" data-index="05">
+      <div class="project-block-inner">
+        <div class="project-visual">
+          <div class="project-img-main">
+            <img src="https://coderthemes.com/adminto/assets/images/demo/main.png" alt="Promoteur App" loading="lazy" />
+            <div class="project-img-overlay"></div>
+          </div>
+          <div class="project-img-float">
+            <img src="https://www.ideamotive.co/hs-fs/hubfs/Skill.png?name=Skill.png&width=1600" alt="Promoteur Stack"
+              loading="lazy" />
+          </div>
+          <div class="project-number">05</div>
+        </div>
+        <div class="project-details">
+          <span class="project-category">SITE WEB DYNAMIQUE</span>
+          <h3 class="project-title">Promoteur</h3>
+          <p class="project-description">
+            Site web dynamique développé en PHP avec base de données MySQL, testé en local via XAMPP. Gestion complète
+            de données avec interface d'administration.
+          </p>
+          <div class="project-stack">
+            <span>PHP</span>
+            <span>MySQL</span>
+            <span>XAMPP</span>
+            <span>Database</span>
+          </div>
+          <a href="#" class="project-cta magnetic-btn">
+            <span>Voir le projet</span>
+            <div class="project-cta-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- MARQUEE -->
+  <section class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span class="marquee-item">REACT NATIVE</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">FIGMA</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">JAVASCRIPT</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">UI/UX DESIGN</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">PHP</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">FIREBASE</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">EXPO</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">MYSQL</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">REACT NATIVE</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">FIGMA</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">JAVASCRIPT</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">UI/UX DESIGN</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">PHP</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">FIREBASE</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">EXPO</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">MYSQL</span>
+        <span class="marquee-sep">✦</span>
+      </div>
+    </div>
+    <div class="marquee-track reverse">
+      <div class="marquee-content">
+        <span class="marquee-item filled">DÉVELOPPEMENT</span>
+        <span class="marquee-sep">◆</span>
+        <span class="marquee-item filled">DESIGN</span>
+        <span class="marquee-sep">◆</span>
+        <span class="marquee-item filled">FREELANCE</span>
+        <span class="marquee-sep">◆</span>
+        <span class="marquee-item filled">MOBILE</span>
+        <span class="marquee-sep">◆</span>
+        <span class="marquee-item filled">WEB</span>
+        <span class="marquee-sep">◆</span>
+        <span class="marquee-item filled">BRANDING</span>
+        <span class="marquee-sep">◆</span>
+        <span class="marquee-item filled">DÉVELOPPEMENT</span>
+        <span class="marquee-sep">◆</span>
+        <span class="marquee-item filled">DESIGN</span>
+        <span class="marquee-sep">◆</span>
+        <span class="marquee-item filled">FREELANCE</span>
+        <span class="marquee-sep">◆</span>
+        <span class="marquee-item filled">MOBILE</span>
+        <span class="marquee-sep">◆</span>
+        <span class="marquee-item filled">WEB</span>
+        <span class="marquee-sep">◆</span>
+        <span class="marquee-item filled">BRANDING</span>
+        <span class="marquee-sep">◆</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section class="skills" id="skills">
+    <div class="section-header">
+      <span class="section-label">// COMPÉTENCES</span>
+      <h2 class="section-title-large">
+        <span class="title-line"><span class="reveal-text">MES <em class="italic-accent">OUTILS</em></span></span>
+        <span class="title-line"><span class="reveal-text">& EXPERTISES</span></span>
+      </h2>
+    </div>
+
+    <div class="skills-showcase">
+      <!-- DÉVELOPPEMENT -->
+      <div class="skill-category card-reveal">
+        <div class="bento-card-glow"></div>
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg></div>
+          <div>
+            <h3 class="skill-cat-title">Développement</h3><span class="skill-cat-count">9 technologies</span>
+          </div>
+        </div>
+        <div class="skill-logos-grid">
+          <div class="skill-logo-item"><svg viewBox="0 0 128 128">
+              <path fill="#E44D26" d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z" />
+              <path fill="#F16529" d="M64 116.8l36.378-10.086 8.559-95.878H64z" />
+              <path fill="#EBEBEB"
+                d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z" />
+              <path fill="#fff"
+                d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.335-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z" />
+            </svg><span>HTML5</span></div>
+          <div class="skill-logo-item"><svg viewBox="0 0 128 128">
+              <path fill="#1572B6" d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543z" />
+              <path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16z" />
+              <path fill="#fff"
+                d="M64.001 51.429h18.302l1.264-14.163H64.001V24.208h34.682l-.332 3.711-3.4 38.114H64.001z" />
+            </svg><span>CSS3</span></div>
+          <div class="skill-logo-item"><svg viewBox="0 0 128 128">
+              <rect fill="#F0DB4F" width="128" height="128" rx="6" />
+              <path fill="#323330"
+                d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949l-9.508 5.485c1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.142-.39 1.257-3.776.058-9.141z" />
+            </svg><span>JavaScript</span></div>
+          <div class="skill-logo-item"><svg viewBox="0 0 128 128">
+              <g fill="#61DAFB">
+                <circle cx="64" cy="64" r="11.4" />
+                <path
+                  d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1 2.1-13.2-.2-22.5-6.6-26.1-1.9-1.1-4-1.6-6.4-1.6-7 0-15.9 5.2-24.9 13.9-9-8.7-17.9-13.9-24.9-13.9-2.4 0-4.5.5-6.4 1.6C25.8 13.3 23.5 22.6 25.6 35.8c.4 2.3.9 4.7 1.5 7.1-2.4.7-4.7 1.4-6.9 2.3C8.2 50 1.4 56.6 1.4 64s6.9 14 19.3 18.8c2.2.8 4.5 1.6 6.9 2.3-.6 2.4-1.1 4.8-1.5 7.1-2.1 13.2.2 22.5 6.6 26.1 1.9 1.1 4 1.6 6.4 1.6 7.1 0 16-5.2 24.9-13.9 9 8.7 17.9 13.9 24.9 13.9 2.4 0 4.5-.5 6.4-1.6 6.4-3.7 8.7-13 6.6-26.1-.4-2.3-.9-4.7-1.5-7.1 2.4-.7 4.7-1.4 6.9-2.3 12.5-4.8 19.3-11.4 19.3-18.8s-6.8-14-19.3-18.8z" />
+              </g>
+            </svg><span>React Native</span></div>
+          <div class="skill-logo-item"><svg viewBox="0 0 128 128">
+              <path fill="#fff"
+                d="M57.1 4.8c1.6-2.7 4.3-4.3 6.9-4.3s5.3 1.6 6.9 4.3c8 13.7 27.4 47.1 35.2 60.7 1.6 2.7 1.6 5.9 0 8.6C94.5 92.4 78.2 120.6 66.6 128c-1.6.9-3.2 0-4.5-1.6C50.5 111.1 19.3 60.1 14 50.2c-2.7-5.3 0-11.8 2.7-15 11.7-20.1 32.4-17.7 40.4-30.4z" />
+            </svg><span>Expo</span></div>
+          <div class="skill-logo-item"><svg viewBox="0 0 128 128">
+              <path fill="#6181B6"
+                d="M64 33.039C30.26 33.039 2.906 46.901 2.906 64S30.26 94.961 64 94.961 125.094 81.099 125.094 64 97.74 33.039 64 33.039z" />
+              <path fill="#fff"
+                d="M34.006 69.093h-3.788l-1.588 5.946h-7.326l4.492-23.114h14.754c6.038 0 9.138 3.452 9.138 8.63 0 5.87-3.982 8.538-15.682 8.538z" />
+            </svg><span>PHP</span></div>
+          <div class="skill-logo-item"><svg viewBox="0 0 128 128">
+              <path fill="#FFA000" d="M27.35 80.52l7.68-47.06c.11-.68.82-.99 1.37-.59l8.35 6.03z" />
+              <path fill="#F57C00"
+                d="M99.76 90.96l-8.64-53.66c-.11-.66-.88-.93-1.35-.45L27.35 80.52l30.63 17.68c2.39 1.38 5.34 1.38 7.73 0z" />
+              <path fill="#FFCA28"
+                d="M74.88 40.06c.29-.58-.08-1.27-.73-1.35l-3.79-.47-3.5 2.19L44.75 37.2c-.5-.27-1.1.1-1.17.66l-16.23 42.66z" />
+            </svg><span>Firebase</span></div>
+          <div class="skill-logo-item"><svg viewBox="0 0 118 94">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.403-10.624 10.943-11.153v-5.972c-5.54-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
+                fill="#7952B3" />
+            </svg><span>Bootstrap</span></div>
+          <div class="skill-logo-item"><svg viewBox="0 0 24 24">
+              <path
+                d="M21.36 10.15h-8.08V1.95a.5.5 0 0 0-.84-.36l-9.8 8.8c-.2.18-.08.51.19.51h8.09v8.2c0 .38.45.58.74.33l9.88-8.88a.49.49 0 0 0-.18-.89Z"
+                fill="#3ECF8E" />
+            </svg><span>Supabase</span></div>
+        </div>
+      </div>
+
+      <!-- DESIGN -->
+      <div class="skill-category card-reveal">
+        <div class="bento-card-glow"></div>
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+              <circle cx="8" cy="8" r="2"></circle>
+            </svg></div>
+          <div>
+            <h3 class="skill-cat-title">Design</h3><span class="skill-cat-count">4 compétences</span>
+          </div>
+        </div>
+        <div class="skill-logos-grid">
+          <div class="skill-logo-item"><svg viewBox="0 0 128 128">
+              <path fill="#0ACF83"
+                d="M45.5 129c11.9 0 21.5-9.6 21.5-21.5V86H45.5C33.6 86 24 95.6 24 107.5S33.6 129 45.5 129z" />
+              <path fill="#A259FF" d="M24 64.5C24 52.6 33.6 43 45.5 43H67v43H45.5C33.6 86 24 76.4 24 64.5z" />
+              <path fill="#F24E1E" d="M24 21.5C24 9.6 33.6 0 45.5 0H67v43H45.5C33.6 43 24 33.4 24 21.5z" />
+              <path fill="#FF7262" d="M67 0h21.5C100.4 0 110 9.6 110 21.5S100.4 43 88.5 43H67V0z" />
+              <path fill="#1ABCFE"
+                d="M110 64.5c0 11.9-9.6 21.5-21.5 21.5S67 76.4 67 64.5 76.6 43 88.5 43 110 52.6 110 64.5z" />
+            </svg><span>Figma</span></div>
+          <div class="skill-logo-item"><svg viewBox="0 0 24 24" fill="none">
+              <rect width="24" height="24" rx="4" fill="#7B2FFF" />
+              <path d="M7 8h10M7 12h7M7 16h10" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+            </svg><span>UI/UX</span></div>
+          <div class="skill-logo-item"><svg viewBox="0 0 24 24" fill="none">
+              <rect width="24" height="24" rx="4" fill="#EC4899" />
+              <rect x="4" y="4" width="7" height="7" rx="1" stroke="#fff" stroke-width="1.2" />
+              <rect x="13" y="4" width="7" height="7" rx="1" stroke="#fff" stroke-width="1.2" />
+              <rect x="4" y="13" width="7" height="7" rx="1" stroke="#fff" stroke-width="1.2" />
+              <rect x="13" y="13" width="7" height="7" rx="1" stroke="#fff" stroke-width="1.2" stroke-dasharray="2 1" />
+            </svg><span>Wireframing</span></div>
+          <div class="skill-logo-item"><svg viewBox="0 0 24 24" fill="none">
+              <rect width="24" height="24" rx="4" fill="#06B6D4" />
+              <path d="M8 6l4 6-4 6M12 18h4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg><span>Prototypage</span></div>
+        </div>
+      </div>
+
+      <!-- OUTILS -->
+      <div class="skill-category card-reveal">
+        <div class="bento-card-glow"></div>
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+              </path>
+            </svg></div>
+          <div>
+            <h3 class="skill-cat-title">Outils</h3><span class="skill-cat-count">4 outils</span>
+          </div>
+        </div>
+        <div class="skill-logos-grid">
+          <div class="skill-logo-item"><svg viewBox="0 0 128 128">
+              <path fill="#F34F29"
+                d="M124.737 58.378L69.621 3.264c-3.172-3.174-8.32-3.174-11.497 0L46.68 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314 2.703 2.706 3.461 6.607 2.294 9.993l13.992 13.993c3.385-1.167 7.292-.413 9.994 2.295 3.78 3.777 3.78 9.9 0 13.679a9.673 9.673 0 01-13.683 0 9.677 9.677 0 01-2.105-10.521L68.574 47.933l-.002 34.341a9.708 9.708 0 012.559 1.828c3.778 3.777 3.778 9.898 0 13.683-3.779 3.777-9.904 3.777-13.679 0-3.778-3.784-3.778-9.905 0-13.683a9.65 9.65 0 013.167-2.11V47.333a9.581 9.581 0 01-3.167-2.111c-2.862-2.86-3.551-7.06-2.083-10.576L41.056 20.333 3.264 58.123a8.133 8.133 0 000 11.5l55.117 55.114c3.174 3.174 8.32 3.174 11.499 0l54.858-54.858a8.135 8.135 0 00-.001-11.501z" />
+            </svg><span>Git</span></div>
+          <div class="skill-logo-item"><svg viewBox="0 0 128 128">
+              <path fill="#0065A9"
+                d="M95.678 0L44.884 48.422 18.35 28.078 4.689 34.378v59.244l13.661 6.3L44.884 79.578 95.678 128l27.633-13.3V13.3L95.678 0zM44.884 64L24.689 79.578V48.422L44.884 64zm50.794 37.578L72.489 64l23.189-37.578v75.156z" />
+            </svg><span>VS Code</span></div>
+          <div class="skill-logo-item"><svg viewBox="0 0 24 24" fill="none">
+              <rect width="24" height="24" rx="4" fill="#FF5722" />
+              <path d="M6 12h12M12 6v12" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+            </svg><span>XAMPP</span></div>
+          <div class="skill-logo-item"><svg viewBox="0 0 24 24" fill="none">
+              <rect width="24" height="24" rx="4" fill="#4FC08D" />
+              <path d="M4 8h16M4 12h10M4 16h14" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+            </svg><span>Responsive</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <div class="section-header">
+      <span class="section-label">// CONTACT</span>
+      <h2 class="section-title-large">
+        <span class="title-line"><span class="reveal-text">TRAVAILLONS</span></span>
+        <span class="title-line"><span class="reveal-text"><em class="italic-accent">ENSEMBLE</em></span></span>
+      </h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-form-container card-reveal">
+        <div class="contact-instructions">
+          <h3>Prêt à collaborer ?</h3>
+          <p>
+            Veuillez remplir le formulaire ci-dessous pour me parler de votre projet.
+            Précisez bien votre <strong>nom complet</strong>, votre <strong>pays/ville</strong>,
+            l'<strong>objet</strong> de votre message, et une <strong>brève description</strong> de votre besoin.
+          </p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Nom & Prénom *</label>
+              <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label for="emailAddress">Email *</label>
+              <input type="email" id="emailAddress" name="emailAddress" required placeholder="john@example.com">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="country">Pays *</label>
+              <input type="text" id="country" name="country" required placeholder="France">
+            </div>
+            <div class="form-group">
+              <label for="city">Ville *</label>
+              <input type="text" id="city" name="city" required placeholder="Paris">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Objet du message *</label>
+            <input type="text" id="subject" name="subject" required placeholder="Demande de création de site web">
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description brève *</label>
+            <textarea id="description" name="description" rows="4" required
+              placeholder="Parlez-moi de votre projet..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn magnetic-btn">
+            <span>ENVOYER LE MESSAGE</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="submit-icon">
+              <path d="M22 2L11 13M22 2L15 22L11 13M11 13L2 9L22 2" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="form-status" id="formStatus"></div>
+        </form>
+      </div>
+
+      <div class="contact-socials card-reveal">
+        <a href="#" class="social-link magnetic-btn" target="_blank">
+          <span class="social-name">GitHub</span>
+          <span class="social-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+        <a href="#" class="social-link magnetic-btn" target="_blank">
+          <span class="social-name">LinkedIn</span>
+          <span class="social-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+        <a href="#" class="social-link magnetic-btn" target="_blank">
+          <span class="social-name">Dribbble</span>
+          <span class="social-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+        <a href="#" class="social-link magnetic-btn" target="_blank">
+          <span class="social-name">Pinterest</span>
+          <span class="social-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+        <a href="#" class="social-link magnetic-btn" target="_blank">
+          <span class="social-name">Behance</span>
+          <span class="social-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <span class="footer-brand">UNSEPTZEROTROIS</span>
+      <p class="footer-copy">© 2026 UNSEPTZEROTROIS — Tous droits réservés</p>
+      <a href="#hero" class="footer-top magnetic-btn">↑</a>
+    </div>
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

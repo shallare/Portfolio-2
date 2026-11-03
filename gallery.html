@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNSEPTZEROTROIS — Galerie | Shallum Arel MEDJIGBODO</title>
+    <meta name="description"
+        content="Galerie et Portfolio visuel de MEDJIGBODO Shallum Arel. Découvrez mes designs, applications et réalisations visuelles." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body class="gallery-body">
+
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="nav-logo" style="text-decoration: none;">UNSEPTZEROTROIS</a>
+        <div class="nav-links">
+            <a href="index.html#about" class="nav-link" data-text="À PROPOS">À PROPOS</a>
+            <a href="index.html#projects" class="nav-link" data-text="PROJETS">PROJETS</a>
+            <a href="#" class="nav-link active" data-text="GALERIE">GALERIE</a>
+            <a href="index.html#contact" class="nav-link" data-text="CONTACT">CONTACT</a>
+        </div>
+        <div class="nav-menu-btn" id="navMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html#about" class="mobile-nav-link">À PROPOS</a>
+        <a href="index.html#projects" class="mobile-nav-link">PROJETS</a>
+        <a href="#" class="mobile-nav-link active">GALERIE</a>
+        <a href="index.html#contact" class="mobile-nav-link">CONTACT</a>
+    </div>
+
+    <main class="gallery-main" id="top">
+        <!-- GALLERY HEADER & FILTERS -->
+        <header class="gallery-header">
+            <div class="gallery-header-content">
+                <h1 class="gallery-title">MES <span class="accent-italic">CRÉATIONS</span></h1>
+
+                <div class="gallery-filters" id="galleryFilters">
+                    <button class="filter-btn active" data-filter="all">TOUT</button>
+                    <button class="filter-btn" data-filter="design">UI/UX DESIGN</button>
+                    <button class="filter-btn" data-filter="web">WEB & MOBILE</button>
+                    <button class="filter-btn" data-filter="branding">BRANDING</button>
+                    <button class="filter-btn" data-filter="lifestyle">LIFESTYLE</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- BENTO / MASONRY GRID -->
+        <div class="gallery-grid" id="galleryGrid">
+
+            <!-- ANTA Project: Single Unified Item -->
+            <a href="#" class="gallery-item item-large" data-category="web" data-project="anta"
+                data-gallery='["/assets/ANTA PROJECT/antaprincipale.jpeg", "/assets/ANTA PROJECT/antadashboard1.jpeg", "/assets/ANTA PROJECT/antadashboard2.jpeg", "/assets/ANTA PROJECT/antadashboard3.jpeg", "/assets/ANTA PROJECT/antadashboard4.jpeg", "/assets/ANTA PROJECT/antadashboard5.jpeg", "/assets/ANTA PROJECT/antadashboard6.jpeg", "/assets/ANTA PROJECT/antadashboard7.jpeg"]'>
+                <img src="/assets/ANTA PROJECT/antaprincipale.jpeg" alt="Projet ANTA" loading="lazy"
+                    style="object-position: top center;" />
+                <div class="item-overlay">
+                    <span class="item-category">WEB & MOBILE</span>
+                    <h3 class="item-title">Projet ANTA</h3>
+                    <p class="item-desc">Plateforme éducative pour enfants avec tableau de bord complet.</p>
+                </div>
+            </a>
+
+            <!-- IUP MILENA Project: Tall (Span 1x2) -->
+            <a href="https://linergroup.tech/milena/linergroup.tech/milena/index.html" target="_blank"
+                class="gallery-item item-tall" data-category="web">
+                <img src="/assets/milena-preview.png" alt="IUP MILENA" loading="lazy"
+                    style="object-position: top center;" />
+                <div class="item-overlay">
+                    <span class="item-category">WEB & MOBILE</span>
+                    <h3 class="item-title">IUP MILENA</h3>
+                    <p class="item-desc">Site web institutionnel. Filières, admission et vie étudiante.</p>
+                </div>
+            </a>
+
+            <!-- Item 3: Standard (Span 1x1) -->
+            <a href="#" class="gallery-item" data-category="web">
+                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?fm=jpg&w=800&q=80"
+                    alt="Portfolio" loading="lazy" />
+                <div class="item-overlay">
+                    <span class="item-category">WEB & MOBILE</span>
+                    <h3 class="item-title">Portfolio UNSEPTZEROTROIS</h3>
+                    <p class="item-desc">Portfolio immersif avec animations GSAP interactives.</p>
+                </div>
+            </a>
+
+            <!-- Item 4: Standard (Span 1x1) -->
+            <a href="#" class="gallery-item" data-category="branding">
+                <img src="https://s.tmimgcdn.com/scr/800x500/118000/a5-company-modern-brochure-corporate-identity-template_118009-original.jpg"
+                    alt="Brochure FUN" loading="lazy" />
+                <div class="item-overlay">
+                    <span class="item-category">BRANDING</span>
+                    <h3 class="item-title">Brochure Corporate</h3>
+                    <p class="item-desc">Design pour FUN HIGH TECH</p>
+                </div>
+            </a>
+
+            <!-- VIDEO ROW: Full Width -->
+            <div class="gallery-item item-video-row" data-category="lifestyle">
+                <div class="video-row-header">
+                    <h3>VIDÉOS & AVENTURES</h3>
+                </div>
+                <div class="video-row-scroll">
+                    <a href="#" class="video-card">
+                        <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?fm=jpg&w=800&q=80"
+                            alt="Ocean" loading="lazy" />
+                        <div class="video-overlay">
+                            <div class="play-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                            <div class="video-info">
+                                <h4>Aventures Océaniques</h4>
+                                <span>83,474 vues</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="video-card">
+                        <img src="https://images.unsplash.com/photo-1518599904199-0ca897819ddb?fm=jpg&w=800&q=80"
+                            alt="Mountain" loading="lazy" />
+                        <div class="video-overlay">
+                            <div class="play-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                            <div class="video-info">
+                                <h4>Les Montagnes Bleues</h4>
+                                <span>24,365 vues</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="video-card">
+                        <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?fm=jpg&w=800&q=80"
+                            alt="New York" loading="lazy" />
+                        <div class="video-overlay">
+                            <div class="play-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                            <div class="video-info">
+                                <h4>New York City</h4>
+                                <span>574,372 vues</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="video-card">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?fm=jpg&w=800&q=80"
+                            alt="Serenity" loading="lazy" />
+                        <div class="video-overlay">
+                            <div class="play-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                            <div class="video-info">
+                                <h4>Sérénité Urbaine</h4>
+                                <span>1,473,064 vues</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Item 5: Tall (Span 1x2) -->
+            <a href="#" class="gallery-item item-tall" data-category="design">
+                <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?fm=jpg&w=800&q=80" alt="Hybrid Bike"
+                    loading="lazy" />
+                <div class="item-overlay">
+                    <span class="item-category">UI/UX DESIGN</span>
+                    <h3 class="item-title">Design Conceptuel 3D</h3>
+                    <p class="item-desc">Concept art et modélisation 3D pour interfaces next-gen.</p>
+                </div>
+            </a>
+
+            <!-- Item 6: Wide (Span 2x1) -->
+            <a href="#" class="gallery-item item-wide" data-category="web">
+                <img src="https://coderthemes.com/adminto/assets/images/demo/main.png" alt="Dashboard Promoteur"
+                    loading="lazy" style="object-position: top center;" />
+                <div class="item-overlay">
+                    <span class="item-category">WEB & MOBILE</span>
+                    <h3 class="item-title">Tableau de bord ERP</h3>
+                    <p class="item-desc">Interface d'administration interne haute performance.</p>
+                </div>
+            </a>
+
+            <!-- Item 7: Standard (Span 1x1) -->
+            <a href="#" class="gallery-item" data-category="branding">
+                <img src="https://asset.gecdesigns.com/img/flyer-templates/professional-looking-school-promotion-flyer-design-1659087425446-cover.webp"
+                    alt="School Flyer" loading="lazy" />
+                <div class="item-overlay">
+                    <span class="item-category">BRANDING</span>
+                    <h3 class="item-title">Direction Artistique</h3>
+                    <p class="item-desc">Campagne de communication visuelle institutionnelle.</p>
+                </div>
+            </a>
+
+            <!-- Item 8: Standard (Span 1x1) -->
+            <a href="#" class="gallery-item" data-category="design">
+                <img src="https://cdn.dribbble.com/userupload/14330213/file/original-25f98266350471b8c20425728173c3ec.jpg"
+                    alt="PayChat Screens 2" loading="lazy" />
+                <div class="item-overlay">
+                    <span class="item-category">UI/UX DESIGN</span>
+                    <h3 class="item-title">Wireframes PayChat</h3>
+                    <p class="item-desc">Architecture de l'information et parcours utilisateur.</p>
+                </div>
+            </a>
+
+            <!-- Item 9: Wide (Span 2x1) -->
+            <a href="#" class="gallery-item item-wide" data-category="branding">
+                <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?fm=jpg&w=1200&q=80"
+                    alt="Night City Lights" loading="lazy" />
+                <div class="item-overlay">
+                    <span class="item-category">BRANDING</span>
+                    <h3 class="item-title">Identité Visuelle</h3>
+                    <p class="item-desc">Création de charte graphique et logos sur mesure.</p>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <span class="footer-brand">UNSEPTZEROTROIS</span>
+            <p class="footer-copy">© 2026 UNSEPTZEROTROIS — Tous droits réservés</p>
+            <a href="#top" class="footer-top magnetic-btn">↑</a>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Fermer la galerie">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+            </svg>
+        </button>
+
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Image Précédente">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6" />
+            </svg>
+        </button>
+
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Image Suivante">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18l6-6-6-6" />
+            </svg>
+        </button>
+
+        <div class="lightbox-content">
+            <img src="" alt="Aperçu" class="lightbox-img" id="lightboxImg">
+            <div class="lightbox-reactions" id="lightboxReactions">
+                <button class="reaction-btn magnetic-btn" data-reaction="ok">
+                    <span class="emoji">👌</span>
+                    <span class="count" id="count-ok">0</span>
+                </button>
+                <button class="reaction-btn magnetic-btn" data-reaction="laugh">
+                    <span class="emoji">😂</span>
+                    <span class="count" id="count-laugh">0</span>
+                </button>
+                <button class="reaction-btn magnetic-btn" data-reaction="heart">
+                    <span class="emoji">❤️</span>
+                    <span class="count" id="count-heart">0</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
