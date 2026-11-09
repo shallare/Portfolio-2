@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UNSEPTZEROTROIS — Portfolio | Shallum Arel MEDJIGBODO</title>
   <meta name="description"
-    content="Portfolio de MEDJIGBODO Shallum Arel — Développeur Web & Mobile, UI Designer, Entrepreneur Tech. Découvrez mes projets, compétences et réalisations." />
+    content="Portfolio de MEDJIGBODO Shallum Arel — Software Engineer, UI/UX Designer et Entrepreneur Tech. Découvrez mes projets et mon ambition de propulser un projet personnel à l'échelle mondiale." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -15,11 +15,14 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 
-<body>
+<body data-gesture-control="auto" data-gesture-auto-start="true" data-gesture-debug="false" data-gesture-position="bottom-right">
 
   <!-- CUSTOM CURSOR -->
   <div class="cursor-dot" id="cursorDot"></div>
   <div class="cursor-outline" id="cursorOutline"></div>
+
+  <!-- GESTURE VIRTUAL CURSOR -->
+  <div id="gesture-virtual-cursor" aria-hidden="true"></div>
 
   <!-- PRELOADER -->
   <div class="preloader" id="preloader">
@@ -47,6 +50,19 @@
       <a href="#skills" class="nav-link" data-text="COMPÉTENCES">COMPÉTENCES</a>
       <a href="#contact" class="nav-link" data-text="CONTACT">CONTACT</a>
     </div>
+    <div class="nav-controls">
+      <button class="nav-gesture-btn" id="navGestureBtn" aria-label="Activer le contrôle gestuel" title="Contrôle gestuel (G)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 8A6 6 0 0 0 6 8"/>
+          <path d="M14 14A4 4 0 0 1 10 14"/>
+          <line x1="6" y1="1" x2="6" y2="4"/>
+          <line x1="18" y1="1" x2="18" y2="4"/>
+          <line x1="10" y1="19" x2="10" y2="22"/>
+          <line x1="14" y1="19" x2="14" y2="22"/>
+        </svg>
+        <span class="nav-gesture-tooltip">Contrôle gestuel</span>
+      </button>
+    </div>
     <div class="nav-menu-btn" id="navMenuBtn">
       <span></span>
       <span></span>
@@ -64,58 +80,7 @@
 
   <!-- HERO SECTION -->
 
-  <video autoplay loop muted playsinline id="video-bg">
-    <source src="img/bgvideo.mp4" type="video/mp4">
-    Votre navigateur ne supporte pas la lecture de vidéos.
-  </video>
-
-</div>
-
   <section class="hero" id="hero">
-    <!-- Floating 3D geometric decorations -->
-    <div class="floating-shapes">
-      <div class="geo-shape" data-speed="0.3" style="top: 8%; left: 8%;">
-        <div class="sphere-glass">
-          <div class="sphere-inner"></div>
-        </div>
-      </div>
-      <div class="geo-shape" data-speed="-0.2" style="top: 15%; right: 10%;">
-        <div class="cube-3d">
-          <div class="cube-face front"></div>
-          <div class="cube-face back"></div>
-          <div class="cube-face right"></div>
-          <div class="cube-face left"></div>
-          <div class="cube-face top"></div>
-          <div class="cube-face bottom"></div>
-        </div>
-      </div>
-      <div class="geo-shape" data-speed="0.5" style="bottom: 20%; left: 12%;">
-        <div class="torus-ring"></div>
-      </div>
-      <div class="geo-shape" data-speed="-0.4" style="bottom: 25%; right: 15%;">
-        <div class="diamond"></div>
-      </div>
-      <div class="geo-shape" data-speed="0.2" style="top: 55%; right: 26%;">
-        <div class="cross-shape">
-          <span></span><span></span>
-        </div>
-      </div>
-      <div class="geo-shape" data-speed="-0.3" style="top: 60%; left: 18%;">
-        <div class="glass-pill"></div>
-      </div>
-      <div class="geo-shape dot-cluster" data-speed="0.6">
-        <span></span><span></span><span></span>
-      </div>
-      <div class="geo-shape glow-orb orb-1" data-speed="-0.5"></div>
-      <div class="geo-shape glow-orb orb-2" data-speed="0.4"></div>
-    </div>
-
-    <!-- Particle background -->
-    <canvas class="particles-canvas" id="particlesCanvas"></canvas>
-
-    <!-- Grid background overlay -->
-    <div class="hero-grid-bg"></div>
-
     <div class="hero-content">
       <div class="hero-badge">
         <span class="badge-dot"></span>
@@ -131,7 +96,7 @@
       </h1>
       <div class="hero-subtitle">
         <span class="hero-line line-3">
-          <span class="reveal-text">Software Engineer · UI Designer</span>
+          <span class="reveal-text">Software Engineer · UI/UX Designer</span>
         </span>
         <span class="hero-line line-4">
           <span class="reveal-text">· Entrepreneur Tech</span>
@@ -175,13 +140,13 @@
         <div class="bento-card-glow"></div>
         <div class="bento-card-inner">
           <p class="bento-text-large">
-            Je suis <strong>MEDJIGBODO Shallum Arel</strong>, étudiant en Génie Logiciel et passionné par la création de
-            solutions digitales modernes et performantes.
+            Je suis <strong>MEDJIGBODO Shallum Arel</strong>, Software Engineer, UI/UX Designer et Entrepreneur Tech,
+            passionné par la création de solutions digitales modernes et performantes.
           </p>
           <p class="bento-text">
             Sous le pseudonyme <strong class="accent">UNSEPTZEROTROIS</strong>, je conçois des applications web, mobiles
-            et des interfaces intuitives orientées expérience utilisateur. Mon ambition : devenir développeur freelance
-            et entrepreneur tech.
+            et des interfaces intuitives orientées expérience utilisateur. Mon ambition : propulser l'un de mes projets
+            personnels à l'échelle mondiale.
           </p>
         </div>
       </div>
@@ -258,7 +223,7 @@
           </div>
           <div class="info-row">
             <span class="info-label">Objectif</span>
-            <span class="info-value">Freelance & Entrepreneur</span>
+            <span class="info-value">Projet personnel à l'échelle mondiale</span>
           </div>
         </div>
       </div>
@@ -837,6 +802,33 @@
   </footer>
 
   <script type="module" src="/main.js"></script>
+  <script type="module">
+    import { initGestureControl } from '/src/gesture-control/index.js';
+
+    // Initialize gesture control
+    initGestureControl({
+      autoStart: true,
+      showDebug: false,
+      uiPosition: 'bottom-right',
+      uiTheme: 'auto',
+      onReady: ({ controller, ui }) => {
+        console.log('Gesture control ready');
+        // Link navbar button to UI
+        const navBtn = document.getElementById('navGestureBtn');
+        if (navBtn) {
+          navBtn.addEventListener('click', () => ui.togglePanel());
+          // Update button state based on controller status
+          controller.options.onStatusChange = (status) => {
+            navBtn.classList.toggle('active', status === 'running');
+            navBtn.setAttribute('aria-pressed', status === 'running');
+          };
+        }
+      },
+      onError: (err) => {
+        console.error('Gesture control error:', err);
+      }
+    });
+  </script>
 </body>
 
 </html>

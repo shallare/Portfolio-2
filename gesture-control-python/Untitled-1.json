@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "version": 4.6,
+    "type": "Material",
+    "generator": "Material.toJSON"
+  },
+  "uuid": "e1b01c51-d7b4-4c4f-bfa0-bd6b7d6af4a7",
+  "type": "MeshStandardMaterial",
+  "name": "Material.001",
+  "color": 3026478,
+  "roughness": 0.272165536880493,
+  "metalness": 0.400000005960464,
+  "emissive": 0,
+  "envMapRotation": [
+    0,
+    0,
+    0,
+    "XYZ"
+  ],
+  "envMapIntensity": 1,
+  "blendColor": 0,
+  "userData": {
+    "fromFBX": {
+      "shadingModel": "Phong",
+      "isTruePBR": false
+    }
+  }
+}

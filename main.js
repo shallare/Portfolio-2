@@ -19,6 +19,9 @@ const lenis = new Lenis({
     smoothWheel: true,
 });
 
+// Expose globally for gesture control
+window.lenis = lenis;
+
 function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
@@ -81,7 +84,7 @@ if (window.innerWidth > 768) {
 }
 
 // ============================================
-// MAGNETIC BUTTONS
+// MAGNETIC BUTTONS (SUBTLE)
 // ============================================
 
 if (window.innerWidth > 768) {
@@ -91,9 +94,9 @@ if (window.innerWidth > 768) {
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
             gsap.to(btn, {
-                x: x * 0.3,
-                y: y * 0.3,
-                duration: 0.4,
+                x: x * 0.15,
+                y: y * 0.15,
+                duration: 0.3,
                 ease: 'power2.out',
             });
         });
@@ -101,62 +104,11 @@ if (window.innerWidth > 768) {
         btn.addEventListener('mouseleave', () => {
             gsap.to(btn, {
                 x: 0, y: 0,
-                duration: 0.7,
-                ease: 'elastic.out(1, 0.3)',
+                duration: 0.5,
+                ease: 'elastic.out(1, 0.4)',
             });
         });
     });
-}
-
-// ============================================
-// PARTICLES
-// ============================================
-
-const canvas = document.getElementById('particlesCanvas');
-if (canvas) {
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    class Particle {
-        constructor() { this.reset(); }
-        reset() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 1.2 + 0.3;
-            this.speedX = (Math.random() - 0.5) * 0.2;
-            this.speedY = (Math.random() - 0.5) * 0.2;
-            this.opacity = Math.random() * 0.3 + 0.05;
-            this.hue = Math.random() > 0.5 ? 260 : 190;
-        }
-        update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-            if (this.x > canvas.width + 10 || this.x < -10 ||
-                this.y > canvas.height + 10 || this.y < -10) this.reset();
-        }
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = `hsla(${this.hue}, 70%, 60%, ${this.opacity})`;
-            ctx.fill();
-        }
-    }
-
-    for (let i = 0; i < 50; i++) particles.push(new Particle());
-
-    function animateParticles() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach((p) => { p.update(); p.draw(); });
-        requestAnimationFrame(animateParticles);
-    }
-    animateParticles();
 }
 
 // ============================================
@@ -199,18 +151,12 @@ function startHeroAnimations() {
     tl
         .to('.navbar', { opacity: 1, duration: 0.7 })
         .to('.hero-badge', { opacity: 1, y: 0, duration: 0.6 }, '-=0.3')
-        .to('.line-1 .reveal-text', { y: 0, duration: 1.1 }, '-=0.3')
-        .to('.line-2 .reveal-text', { y: 0, duration: 1.1 }, '-=0.8')
-        .to('.line-3 .reveal-text', { y: 0, duration: 0.9 }, '-=0.5')
-        .to('.line-4 .reveal-text', { y: 0, duration: 0.9 }, '-=0.7')
+        .to('.line-1 .reveal-text', { y: 0, opacity: 1, duration: 1.1 }, '-=0.3')
+        .to('.line-2 .reveal-text', { y: 0, opacity: 1, duration: 1.1 }, '-=0.8')
+        .to('.line-3 .reveal-text', { y: 0, opacity: 1, duration: 0.9 }, '-=0.5')
+        .to('.line-4 .reveal-text', { y: 0, opacity: 1, duration: 0.9 }, '-=0.7')
         .to('.hero-cta', { opacity: 1, y: 0, duration: 0.7 }, '-=0.4')
-        .to('.scroll-indicator', { opacity: 1, duration: 0.5 }, '-=0.2')
-        .to('.geo-shape', {
-            opacity: (i) => [0.8, 0.7, 0.6, 0.6, 0.5, 0.4, 0.5, 0.6, 0.5][i] || 0.5,
-            stagger: 0.06,
-            duration: 0.8,
-            ease: 'power2.out',
-        }, '-=0.8');
+        .to('.scroll-indicator', { opacity: 1, duration: 0.5 }, '-=0.2');
 }
 
 // ============================================
@@ -250,7 +196,7 @@ function updateActiveNav(id) {
 // Section title reveals
 gsap.utils.toArray('.section-title-large .reveal-text').forEach((text) => {
     gsap.to(text, {
-        y: 0, duration: 1, ease: 'power4.out',
+        y: 0, opacity: 1, duration: 1, ease: 'power4.out',
         scrollTrigger: {
             trigger: text.closest('.section-header'),
             start: 'top 82%',
@@ -348,19 +294,6 @@ document.querySelectorAll('.project-block').forEach((block) => {
     });
 });
 
-// Parallax floating shapes
-gsap.utils.toArray('.geo-shape').forEach((shape) => {
-    const speed = parseFloat(shape.dataset.speed) || 0.3;
-    gsap.to(shape, {
-        y: speed * -200,
-        scrollTrigger: {
-            trigger: '.hero',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true,
-        },
-    });
-});
 
 // Hide scroll indicator
 ScrollTrigger.create({
@@ -372,23 +305,23 @@ ScrollTrigger.create({
 });
 
 // ============================================
-// 3D TILT ON CARDS
+// SUBTLE CARD TILT
 // ============================================
 
 if (window.innerWidth > 768) {
-    document.querySelectorAll('.bento-card, .skill-card').forEach((card) => {
+    document.querySelectorAll('.bento-card, .skill-category').forEach((card) => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -3;
-            const rotateY = ((x - centerX) / centerX) * 3;
+            const rotateX = ((y - centerY) / centerY) * -1.5;
+            const rotateY = ((x - centerX) / centerX) * 1.5;
 
             gsap.to(card, {
                 rotateX, rotateY,
-                duration: 0.4,
+                duration: 0.3,
                 ease: 'power2.out',
                 transformPerspective: 1000,
             });
@@ -399,7 +332,7 @@ if (window.innerWidth > 768) {
                 gsap.to(glow, {
                     x: x - rect.width,
                     y: y - rect.height,
-                    duration: 0.4,
+                    duration: 0.3,
                 });
             }
         });
@@ -407,8 +340,8 @@ if (window.innerWidth > 768) {
         card.addEventListener('mouseleave', () => {
             gsap.to(card, {
                 rotateX: 0, rotateY: 0,
-                duration: 0.7,
-                ease: 'elastic.out(1, 0.5)',
+                duration: 0.5,
+                ease: 'elastic.out(1, 0.6)',
             });
         });
     });
@@ -703,105 +636,14 @@ if (lightbox && lightboxImg && lightboxClose) {
 }
 
 // ============================================
-// INTERACTIVE TITLES (SCATTER ON HOVER)
+// SIMPLE TITLE ANIMATIONS (NO SCATTER)
 // ============================================
 
-const splitTextToChars = (element) => {
-    // Preserve strong/em tags if any, otherwise just split text node
-    const children = Array.from(element.childNodes);
-    element.innerHTML = '';
-    children.forEach(child => {
-        if (child.nodeType === 3) { // Text node
-            const text = child.textContent;
-            for (let i = 0; i < text.length; i++) {
-                if (text[i] === ' ') {
-                    element.innerHTML += ' ';
-                } else {
-                    element.innerHTML += `<span class="hover-char" style="display:inline-block; will-change: transform;">${text[i]}</span>`;
-                }
-            }
-        } else if (child.nodeType === 1) { // Element node (e.g. <em class="italic-accent">)
-            const clonedAttr = child.cloneNode(false);
-            const subChildren = Array.from(child.childNodes);
-            subChildren.forEach(sub => {
-                if (sub.nodeType === 3) {
-                    const text = sub.textContent;
-                    for (let i = 0; i < text.length; i++) {
-                        if (text[i] === ' ') {
-                            clonedAttr.innerHTML += ' ';
-                        } else {
-                            clonedAttr.innerHTML += `<span class="hover-char" style="display:inline-block; will-change: transform;">${text[i]}</span>`;
-                        }
-                    }
-                }
-            });
-            element.appendChild(clonedAttr);
-        }
-    });
-};
-
-// Defer the splitting until all reveal animations have played
+// Ensure reveal-text stays in final position after animation
 setTimeout(() => {
-    const interactiveTitles = document.querySelectorAll('.section-title-large');
-
-    interactiveTitles.forEach(title => {
-        const section = title.closest('section') || title.closest('.hero');
-        const sectionId = section ? (section.id || section.className.split(' ')[0]) : '';
-
-        const iconMap = {
-            'hero': '/assets/icons3d/code.png',
-            'about': '/assets/icons3d/digital.png',
-            'projects': '/assets/icons3d/rocket.png',
-            'skills': '/assets/icons3d/gear.png',
-            'contact': '/assets/icons3d/envelope.png'
-        };
-
-        const iconSrc = iconMap[sectionId] || iconMap['hero'];
-        title.style.position = 'relative';
-
-        const placeholder = document.createElement('div');
-        placeholder.className = 'scatter-placeholder';
-        placeholder.innerHTML = `<img src="${iconSrc}" alt="3D icon" draggable="false" />`;
-        title.appendChild(placeholder);
-
-        const revealTexts = title.querySelectorAll('.reveal-text');
-        revealTexts.forEach(rt => {
-            gsap.set(rt, { y: 0, clearProps: "transform" });
-            rt.style.transform = 'none';
-            splitTextToChars(rt);
-        });
-
-        const chars = title.querySelectorAll('.hover-char');
-
-        title.addEventListener('mouseenter', () => {
-            const lines = title.querySelectorAll('.hero-line, .title-line');
-            lines.forEach(line => line.style.overflow = 'visible');
-            placeholder.classList.add('visible');
-
-            gsap.to(chars, {
-                y: () => gsap.utils.random(40, 120),
-                x: () => gsap.utils.random(-30, 30),
-                rotationZ: () => gsap.utils.random(-45, 45),
-                opacity: 0,
-                duration: 0.5,
-                ease: "power2.in",
-                stagger: { amount: 0.15, from: "random" }
-            });
-        });
-
-        title.addEventListener('mouseleave', () => {
-            placeholder.classList.remove('visible');
-
-            gsap.to(chars, {
-                y: 0, x: 0, rotationZ: 0, opacity: 1,
-                duration: 0.8,
-                ease: "back.out(1.5)",
-                stagger: { amount: 0.1, from: "center" },
-                onComplete: () => {
-                    const lines = title.querySelectorAll('.hero-line, .title-line');
-                    lines.forEach(line => line.style.overflow = 'hidden');
-                }
-            });
-        });
+    const revealTexts = document.querySelectorAll('.reveal-text');
+    revealTexts.forEach(rt => {
+        gsap.set(rt, { y: 0, clearProps: "transform" });
+        rt.style.transform = 'none';
     });
-}, 4000);
+}, 3000);

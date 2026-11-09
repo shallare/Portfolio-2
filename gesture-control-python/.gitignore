@@ -1,0 +1,42 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.env
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# MediaPipe model cache
+~/.cache/mediapipe/
+
+# Logs
+*.log
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Test outputs
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Camera captures (if any)
+captures/
+*.jpg
+*.png
+*.mp4

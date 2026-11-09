@@ -15,11 +15,14 @@
     <link rel="stylesheet" href="/style.css" />
 </head>
 
-<body class="gallery-body">
+<body class="gallery-body" data-gesture-control="auto" data-gesture-auto-start="false" data-gesture-debug="false" data-gesture-position="bottom-right">
 
     <!-- CUSTOM CURSOR -->
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-outline" id="cursorOutline"></div>
+
+    <!-- GESTURE VIRTUAL CURSOR -->
+    <div id="gesture-virtual-cursor" aria-hidden="true"></div>
 
     <!-- NAVIGATION -->
     <nav class="navbar" id="navbar">
@@ -29,6 +32,19 @@
             <a href="index.html#projects" class="nav-link" data-text="PROJETS">PROJETS</a>
             <a href="#" class="nav-link active" data-text="GALERIE">GALERIE</a>
             <a href="index.html#contact" class="nav-link" data-text="CONTACT">CONTACT</a>
+        </div>
+        <div class="nav-controls">
+          <button class="nav-gesture-btn" id="navGestureBtn" aria-label="Activer le contrôle gestuel" title="Contrôle gestuel (G)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8A6 6 0 0 0 6 8"/>
+              <path d="M14 14A4 4 0 0 1 10 14"/>
+              <line x1="6" y1="1" x2="6" y2="4"/>
+              <line x1="18" y1="1" x2="18" y2="4"/>
+              <line x1="10" y1="19" x2="10" y2="22"/>
+              <line x1="14" y1="19" x2="14" y2="22"/>
+            </svg>
+            <span class="nav-gesture-tooltip">Contrôle gestuel</span>
+          </button>
         </div>
         <div class="nav-menu-btn" id="navMenuBtn">
             <span></span>
@@ -290,6 +306,31 @@
     </div>
 
     <script type="module" src="/main.js"></script>
+    <script type="module">
+      import { initGestureControl } from '/src/gesture-control/index.js';
+
+      // Initialize gesture control
+      initGestureControl({
+        autoStart: false,
+        showDebug: false,
+        uiPosition: 'bottom-right',
+        uiTheme: 'auto',
+        onReady: ({ controller, ui }) => {
+          console.log('Gesture control ready');
+          const navBtn = document.getElementById('navGestureBtn');
+          if (navBtn) {
+            navBtn.addEventListener('click', () => ui.togglePanel());
+            controller.options.onStatusChange = (status) => {
+              navBtn.classList.toggle('active', status === 'running');
+              navBtn.setAttribute('aria-pressed', status === 'running');
+            };
+          }
+        },
+        onError: (err) => {
+          console.error('Gesture control error:', err);
+        }
+      });
+    </script>
 </body>
 
 </html>
